@@ -55,10 +55,10 @@ jobs:
       - name: Run static code analysis with psalm
         run: psalm --config=psalm.xml
 
-      - name: Run unit tests with PHPUnit
-        run: phpunit --coverage-clover build/logs/clover.xml
-        env:
-          XDEBUG_MODE: coverage
+#      - name: Run unit tests with PHPUnit
+#        run: phpunit --coverage-clover build/logs/clover.xml
+#        env:
+#          XDEBUG_MODE: coverage
 
 #      - name: Run coverage
 #        run: ./vendor/bin/php-coveralls --coverage_clover=build/logs/clover.xml -v

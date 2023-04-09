@@ -1,6 +1,6 @@
 {
-  "name": "phayne-io/composer-template",
-  "description": "Composer package template",
+  "name": "phayne-io/php-value-objects",
+  "description": "php-value-objects",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
@@ -10,14 +10,16 @@
     }
   ],
   "support": {
-    "source": "https://github.com/phayne-io/composer-template",
-    "issues": "https://github.com/phayne-io/composer-template/issues",
-    "rss": "https://github.com/phayne-io/composer-template/releases.atom",
-    "wiki": "https://github.com/phayne-io/composer-template/wiki"
+    "source": "https://github.com/phayne-io/php-value-objects",
+    "issues": "https://github.com/phayne-io/php-value-objects/issues",
+    "rss": "https://github.com/phayne-io/php-value-objects/releases.atom",
+    "wiki": "https://github.com/phayne-io/php-value-objects/wiki"
   },
   "require": {
     "php": "^8.2",
-    "phayne-io/php-exception": "^1.0@dev"
+    "phayne-io/php-exception": "^1.0@dev",
+    "chrisharrison/php-array-of": "^1.1",
+    "beberlei/assert": "^3.3"
   },
   "require-dev": {
     "dg/bypass-finals": "^1.4",
@@ -29,12 +31,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Phayne\\Template\\": "src/"
+      "Phayne\\ValueObject\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "PhayneTest\\Template\\": "test/"
+      "PhayneTest\\ValueObject\\": "test/"
     }
   },
   "scripts": {
@@ -42,8 +44,7 @@
     "test-clover": "XDEBUG_MODE=coverage phpunit --colors=always -vvv --coverage-clover build/logs/clover.xml",
     "static": "./vendor/bin/psalm --config=psalm.xml",
     "style": "./vendor/bin/phpcs",
-    "test": ["@test-html", "@static", "@style"],
-    "post-create-project-cmd": "php setup.php"
+    "test": ["@test-html", "@static", "@style"]
   },
   "extra": {
     "branch-alias": {
